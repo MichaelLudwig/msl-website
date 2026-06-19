@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MSL GmbH · KI-Architektur, Compliance & digitale Transformation für regulierte Branchen</title>
+<meta name="description" content="MSL GmbH: KI-Architektur, Compliance & Datenschutz und digitale Transformation für stark regulierte Branchen. Interdisziplinär an der Schnittstelle von KI, Regulatorik und Prozess.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#0A1422}
+  *{box-sizing:border-box}
+  @keyframes mslPulse{0%,100%{opacity:.35}50%{opacity:1}}
+  @keyframes mslBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+  a{-webkit-tap-highlight-color:transparent}
+  .navlink:hover{color:#e0bf55 !important}
+  .btn-gold:hover{background:#e0bf55 !important}
+  .btn-ghost:hover{border-color:#e0bf55 !important;color:#e0bf55 !important}
+  .svc-card{transition:all .2s ease}
+  .svc-card:hover{border-color:rgba(201,162,39,.5) !important;box-shadow:0 0 0 1px rgba(201,162,39,.18),0 16px 40px rgba(0,0,0,.35)}
+  .pill:hover{border-color:rgba(63,118,189,.4) !important}
+  .ref-row{transition:background .2s ease}
+  .ref-row:hover{background:rgba(63,118,189,.06) !important}
+  .email-btn:hover{border-color:#e0bf55 !important;background:rgba(201,162,39,.1) !important}
+  .footlink:hover{color:#e0bf55 !important}
+  .mimagic-link:hover{background:#3f76bd !important}
+  .hero-grid{display:grid;gap:clamp(30px,4vw,52px);grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}
+  .svc-grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+  .grid3{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+  .scope-cols{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+  .ref-row{display:grid;gap:28px;grid-template-columns:minmax(0,.36fr) minmax(0,1fr)}
+  .about-grid{display:grid;gap:clamp(28px,4vw,48px);grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);align-items:start}
+  .matrix-row{display:grid;grid-template-columns:minmax(0,1.7fr) repeat(3,minmax(0,.7fr));align-items:center}
+  .nav-burger{display:none}
+  @media(max-width:1080px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr}
+    .grid3{grid-template-columns:1fr}
+    .ref-row{grid-template-columns:1fr;gap:10px}
+    .about-grid{grid-template-columns:1fr}
+    .nav-desktop{display:none !important}
+    .nav-burger{display:flex !important}
+  }
+  @media(max-width:680px){.svc-grid{grid-template-columns:1fr}}
+  @media(max-width:560px){.scope-cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<noscript><div style="font-family:sans-serif;color:#cdd6e2;background:#0A1422;padding:40px;text-align:center">MSL GmbH · KI-Architektur, Compliance &amp; digitale Transformation für regulierte Branchen. Kontakt: info@msl-labs.de</div></noscript>
+<script>
+const PILL={ki:{dot:'#3f76bd',txt:'#7fb0e8'},co:{dot:'#C9A227',txt:'#e0bf55'},dt:{dot:'#2bb8a3',txt:'#4fd4c0'}};
+const ML='font-family:IBM Plex Mono,monospace';
+const LOGO='<svg width="118" height="32" viewBox="0 0 132 36" role="img" aria-label="MSL GmbH"><rect x="0" y="4" width="6" height="28" rx="1" fill="#C9A227"></rect><text x="17" y="26" font-family="IBM Plex Mono,monospace" font-weight="600" font-size="24" letter-spacing="-0.5" fill="#eef3fb">MSL</text><text x="18" y="33" font-family="IBM Plex Mono,monospace" font-weight="500" font-size="6.5" letter-spacing="3.5" fill="#5f7088">GMBH</text></svg>';
+const LOGO_FOOT=LOGO.replace('width="118" height="32"','width="108" height="29"');
+
+const GRAPH='<svg viewBox="0 0 620 150" width="100%" height="160" style="display:block;margin:0 auto 20px;max-width:640px" aria-hidden="true">'
++'<g stroke="rgba(127,160,216,.28)" stroke-width="1">'
++'<line x1="40" y1="70" x2="110" y2="32"></line><line x1="40" y1="70" x2="120" y2="118"></line><line x1="110" y1="32" x2="210" y2="74"></line>'
++'<line x1="120" y1="118" x2="210" y2="74"></line><line x1="120" y1="118" x2="300" y2="120"></line><line x1="210" y1="74" x2="285" y2="34"></line>'
++'<line x1="210" y1="74" x2="300" y2="120"></line><line x1="285" y1="34" x2="375" y2="62"></line><line x1="300" y1="120" x2="450" y2="104"></line>'
++'<line x1="375" y1="62" x2="450" y2="104"></line><line x1="375" y1="62" x2="470" y2="34"></line><line x1="450" y1="104" x2="540" y2="74"></line>'
++'<line x1="470" y1="34" x2="540" y2="74"></line><line x1="540" y1="74" x2="582" y2="118"></line><line x1="450" y1="104" x2="582" y2="118"></line></g>'
++'<circle cx="40" cy="70" r="6" fill="#C9A227" style="animation:mslPulse 3s ease-in-out infinite"></circle>'
++'<circle cx="110" cy="32" r="5" fill="#3f76bd"></circle>'
++'<circle cx="120" cy="118" r="5.5" fill="#2bb8a3" style="animation:mslPulse 3.4s ease-in-out infinite"></circle>'
++'<circle cx="210" cy="74" r="6.5" fill="#C9A227"></circle>'
++'<circle cx="285" cy="34" r="5" fill="#3f76bd" style="animation:mslPulse 2.7s ease-in-out infinite"></circle>'
++'<circle cx="300" cy="120" r="5.5" fill="#2bb8a3"></circle>'
++'<circle cx="375" cy="62" r="6.5" fill="#C9A227" style="animation:mslPulse 3.1s ease-in-out infinite"></circle>'
++'<circle cx="470" cy="34" r="5.5" fill="#2bb8a3"></circle>'
++'<circle cx="450" cy="104" r="6" fill="#3f76bd" style="animation:mslPulse 2.9s ease-in-out infinite"></circle>'
++'<circle cx="540" cy="74" r="6" fill="#C9A227"></circle>'
++'<circle cx="582" cy="118" r="5" fill="#3f76bd"></circle>'
++'<circle r="2.6" fill="#e0bf55"><animateMotion dur="2.8s" repeatCount="indefinite" path="M40,70 L110,32"></animateMotion></circle>'
++'<circle r="2.6" fill="#4fd4c0"><animateMotion dur="3.2s" repeatCount="indefinite" path="M120,118 L210,74"></animateMotion></circle>'
++'<circle r="2.4" fill="#7fb0e8"><animateMotion dur="2.5s" repeatCount="indefinite" path="M285,34 L375,62"></animateMotion></circle>'
++'<circle r="2.6" fill="#4fd4c0"><animateMotion dur="3.5s" repeatCount="indefinite" path="M300,120 L450,104"></animateMotion></circle>'
++'<circle r="2.6" fill="#e0bf55"><animateMotion dur="3s" repeatCount="indefinite" path="M375,62 L470,34"></animateMotion></circle>'
++'<circle r="2.4" fill="#7fb0e8"><animateMotion dur="2.6s" repeatCount="indefinite" path="M450,104 L540,74"></animateMotion></circle>'
++'</svg>';
+
+const C={
+  frameworks:['EU AI Act','ISO 42001','NIS2','DORA','ISO 27001','DSGVO','GMP'],
+  aiStack:['Claude / Claude Code','Azure OpenAI','Microsoft Copilot','Azure AI Foundry','GraphRAG','Lokale KI (Ollama)','MCP / Agentic'],
+  transform:{de:['ERP-Einführung','Cloud-Transition','Modern Workplace','Prozess-Harmonisierung','Projektsteuerung','Produktmanagement','Change-Management'],en:['ERP Implementation','Cloud Transition','Modern Workplace','Process Harmonisation','Project Steering','Product Management','Change Management']},
+  certs:['Microsoft Cybersecurity Architect (SC-100)','TOGAF 9.2','M365 Security','AWS','Scrum (PSM / PSPO)'],
+  de:{
+    nav:{services:'Leistungen',inter:'Interdisziplinär',approach:'Ansatz',refs:'Referenzen',about:'Über uns',contact:'Kontakt'},
+    pillars:{ki:'KI-Architektur',co:'Compliance',dt:'Digitale Transformation'},
+    pshort:{ki:'KI-Architektur',co:'Compliance',dt:'Transformation'},
+    scope:{reg:'Regulatorischer Rahmen',ai:'KI-Compliance und Architektur',dt:'Digitale Transformation'},
+    hero:{pre:'Wir bringen KI und Digitalisierung dorthin, wo ',accent:'Regulierung',post:' den Takt vorgibt.',sub:'Die MSL GmbH begleitet Unternehmen in stark regulierten Branchen dabei, KI und digitale Prozesse einzuführen: datenschutzkonform, sicher und prüffest. Compliance wird zum steuerbaren Prozess statt zum Bremsklotz.',btnCall:'Gespräch vereinbaren',btnServices:'Leistungen ansehen',scopeTitle:'msl://operating.scope'},
+    band:{pre:'Regulatorik ist kein Hindernis für Innovation. ',gold:'Sie ist der Maßstab, an dem gute Lösungen sich beweisen.'},
+    services:{eyebrow:'Leistungen',h2:'Mehrere Disziplinen, eine Schnittstelle',sub:'KI-Architektur, Compliance und Transformation: zusammen gedacht, nicht in Silos. Die Marker zeigen, welche Disziplinen greifen.',items:[
+      {n:'01',status:'active',pillars:['ki','co','dt'],short:'GMP-Digitalisierung',title:'GMP-konforme Digitalisierung',desc:'Digitale Produktionssysteme für Reinraum und regulierte Fertigung, durchgängig prüffest dokumentiert.',tags:['GMP','Reinraum','Audit Trail']},
+      {n:'02',status:'active',pillars:['co','dt'],short:'Transformation & ERP',title:'Digitale Transformation & ERP',desc:'ERP-Einführung, Cloud und Modern Workplace, mit Projektleitung vom Konzept bis zum Go-Live.',tags:['ERP','Azure / M365','Projektleitung']},
+      {n:'03',status:'active',pillars:['ki','co'],short:'Datenschutz & DSFA',title:'Datenschutz & DSFA',desc:'Prüffeste Datenschutz-Folgenabschätzungen als wiederholbares Verfahren, inklusive Drittland und KDG.',tags:['DSGVO','DSFA','KDG']},
+      {n:'04',status:'active',pillars:['ki','co'],short:'KI-Architektur & Agentic',title:'KI-Architektur & agentische Entwicklung',desc:'KI-Lösungen, die wir selbst bauen und betreiben, von Azure OpenAI bis lokaler Inferenz und Knowledge Graphs.',tags:['Azure OpenAI','GraphRAG','Agentic']},
+      {n:'05',status:'active',pillars:['co','dt'],short:'Infosec & OpSec',title:'Informationssicherheit & OpSec',desc:'ISMS und operative Security für regulierte Branchen, von NIS2 und ISO 27001 bis DORA, bis zur Audit-Freigabe.',tags:['NIS2','ISO 27001','DORA']},
+      {n:'06',status:'active',pillars:['ki','co'],short:'KI-Compliance & AI Act',title:'KI-Compliance & EU AI Act',desc:'Risikoklassifizierung, KI-Governance und Validierung, eingebettet in bestehende Qualitäts- und Risikoprozesse.',tags:['EU AI Act','ISO 42001','Governance']}
+    ]},
+    inter:{eyebrow:'Interdisziplinarität',h2:'Der Wert liegt in den Überschneidungen',sub:'Die wenigsten Projekte sind eindimensional. Mein Mehrwert entsteht dort, wo KI-Architektur, Compliance und digitale Transformation zusammenkommen, also genau zwischen den Abteilungen, in denen andere getrennt arbeiten.'},
+    approach:{eyebrow:'Ansatz',h2:'Warum MSL',sub:'Die meisten Berater kennen entweder die Technik oder die Regulatorik. Wir verbinden beides und übernehmen Verantwortung bis zur Umsetzung.',pills:[
+      {n:'01',k:'co',h:'Regulatorische Tiefe',p:'Aktive Projekte über NIS2, ISO 27001, DSGVO, GMP, DORA und EU AI Act hinweg, in Pharma, Finanzsektor und Sozialwirtschaft. Wir kennen die Standards aus der Umsetzung, nicht aus dem Lehrbuch.'},
+      {n:'02',k:'ki',h:'KI mit eigenen Händen',p:'Wir bauen und betreiben KI-Lösungen selbst, von Azure OpenAI bis zu Knowledge-Graph-, RAG- und lokalen Architekturen. So bewerten wir KI-Risiken aus technischer Substanz, nicht aus Folien.'},
+      {n:'03',k:'dt',h:'Transformation bis zum Go-Live',p:'Von der Risikoanalyse über die Architektur bis zu Go-Live und Audit. Wir steuern komplexe Multi-Stakeholder-Projekte und liefern, statt nur zu empfehlen.'}
+    ]},
+    refs:{eyebrow:'Referenzen',h2:'Ausgewählte Projekte',sub:'Anonymisiert nach Branche. Details und Referenzkontakte gern auf Anfrage.',items:[
+      {pillars:['ki','co','dt'],branche:'Pharma & Medizinalcannabis',title:'ISMS-Aufbau (NIS2 / ISO 27001) & GMP-Produktionssystem',desc:'Aufbau eines vollständigen ISMS für eine als „wichtige Einrichtung“ eingestufte Pharmagruppe sowie Konzeption eines GMP-konformen, digitalen Produktionsdokumentationssystems (Tablet, Reinraum, 4-Augen-Prinzip). Dazu Prozesse und ein Framework für eine zu 100 % KI-gestützte Spezifikation, Entwicklung, Testung und Auslieferung.'},
+      {pillars:['co','dt'],branche:'Finanzsektor',title:'OpSec-Governance & Aufsichtsprüfung',desc:'Operative Security-Governance für eine Investitionsbank in Vorbereitung auf eine aufsichtsrechtliche Prüfung: Operationalisierung der OpSec-Vorgaben und Verankerung der Prozesse in der Schriftlich fixierten Ordnung (SfO).'},
+      {pillars:['ki','co'],branche:'Sozialwirtschaft',title:'Datenschutz-Folgenabschätzungen (DSGVO / KDG)',desc:'Mehrere DSFA für eine datenschutzintensive Organisation der Sozialwirtschaft, für Microsoft 365, ein Fach-CRM und eine Fundraising-Plattform, aufgesetzt als wiederholbares Verfahren. KI-gestützte Recherche, Konsolidierung und Erstellung strukturierter DSFA-Dokumente mit lokal betriebenen KI-Systemen, sodass der Datenschutz bereits bei der Erstellung gewahrt bleibt.'},
+      {pillars:['co','dt'],branche:'Apotheke / Healthcare',title:'ERP-Migration auf Dynamics 365 Business Central',desc:'Gesamtprojektleitung der Migration einer regulierten Apotheke auf Microsoft Dynamics 365 Business Central, mit Anbindung an Buchhaltung, Lager, E-Commerce und branchenspezifische Schnittstellen.'}
+    ],note:'Branchenerfahrung darüber hinaus: Banking, Legal Tech, Maschinenbau und öffentlicher Sektor.'},
+    about:{eyebrow:'Über uns',h2:'Inhabergeführt, interdisziplinär, technisch fundiert',role:'Geschäftsführer & Gründer',lead:'Über 15 Jahre an der Schnittstelle von KI, IT-Architektur, Sicherheit und Regulatorik.',p2:'Diplom-Wirtschaftsmathematiker (TU Berlin), zuletzt Principal IT-Architekt bei einem führenden deutschen IT-Beratungshaus. Stationen unter anderem: Security-Governance für eine Investitionsbank, interner KI-Concept-Designer auf Azure OpenAI, Enterprise-Architektur und Cloud-Transformation für Konzerne mit tausenden Arbeitsplätzen.',p3:'Mathematik, Architektur, Security, Regulatorik und KI sind selten in einer Person vereint. Genau diese Kombination macht die MSL GmbH dort stark, wo Disziplinen aufeinandertreffen: an der Schnittstelle von KI, Compliance und digitaler Transformation in regulierten Branchen.',sisterStrong:'Joint Venture.',sisterText:' mimagic baut die Foundation-Layer für europäische KI-Wissenssysteme. Heute: Enchilada, eine managed Knowledge-Plattform für KI-Agenten. Forschungsrichtung: World-Models-Architektur und privacy-preserving Memory. Open-Core, EU-gehostet, Made in Germany.'},
+    contact:{eyebrow:'Kontakt',h2:'Lassen Sie uns sprechen.',p:'Ob KI-Vorhaben, anstehendes Audit oder digitale Transformation in reguliertem Umfeld: ein erstes Gespräch klärt schnell, ob es passt.',addr:'MSL GmbH · Bernau bei Berlin · Deutschland'},
+    foot:{imprint:'Impressum',privacy:'Datenschutz'},
+    sl:{active:'aktiv',completed:'abgeschlossen'}
+  },
+  en:{
+    nav:{services:'Services',inter:'Interdisciplinary',approach:'Approach',refs:'References',about:'About',contact:'Contact'},
+    pillars:{ki:'AI Architecture',co:'Compliance',dt:'Digital Transformation'},
+    pshort:{ki:'AI Architecture',co:'Compliance',dt:'Transformation'},
+    scope:{reg:'Regulatory frameworks',ai:'AI Compliance & Architecture',dt:'Digital Transformation'},
+    hero:{pre:'We bring AI and digitalisation to where ',accent:'regulation',post:' sets the pace.',sub:'MSL GmbH helps companies in highly regulated industries adopt AI and digital processes: privacy-compliant, secure and audit-ready. Compliance becomes a managed process instead of a roadblock.',btnCall:'Book a call',btnServices:'Explore services',scopeTitle:'msl://operating.scope'},
+    band:{pre:'Regulation is not an obstacle to innovation. ',gold:'It is the benchmark by which good solutions prove themselves.'},
+    services:{eyebrow:'Services',h2:'Multiple disciplines, one intersection',sub:'AI architecture, compliance and transformation: thought together, not in silos. The markers show which disciplines apply.',items:[
+      {n:'01',status:'active',pillars:['ki','co','dt'],short:'GMP Digitalisation',title:'GMP-Compliant Digitalisation',desc:'Digital production systems for cleanroom and regulated manufacturing, fully audit-ready documented.',tags:['GMP','Cleanroom','Audit Trail']},
+      {n:'02',status:'active',pillars:['co','dt'],short:'Transformation & ERP',title:'Digital Transformation & ERP',desc:'ERP implementation, cloud and modern workplace, with project leadership from concept to go-live.',tags:['ERP','Azure / M365','Project Lead']},
+      {n:'03',status:'active',pillars:['ki','co'],short:'Data Protection & DPIA',title:'Data Protection & DPIA',desc:'Audit-ready Data Protection Impact Assessments as a repeatable procedure, including third-country transfers and KDG.',tags:['GDPR','DPIA','KDG']},
+      {n:'04',status:'active',pillars:['ki','co'],short:'AI Architecture & Agentic',title:'AI Architecture & Agentic Engineering',desc:'AI solutions we build and run ourselves, from Azure OpenAI to local inference and knowledge graphs.',tags:['Azure OpenAI','GraphRAG','Agentic']},
+      {n:'05',status:'active',pillars:['co','dt'],short:'InfoSec & OpSec',title:'Information Security & OpSec',desc:'ISMS and operational security for regulated industries, from NIS2 and ISO 27001 to DORA, through to audit sign-off.',tags:['NIS2','ISO 27001','DORA']},
+      {n:'06',status:'active',pillars:['ki','co'],short:'AI Compliance & AI Act',title:'AI Compliance & EU AI Act',desc:'Risk classification, AI governance and validation, embedded into existing quality and risk processes.',tags:['EU AI Act','ISO 42001','Governance']}
+    ]},
+    inter:{eyebrow:'Interdisciplinarity',h2:'The value lies in the overlaps',sub:'Few projects are one-dimensional. The value emerges where AI architecture, compliance and digital transformation meet, exactly between the departments where others work separately.'},
+    approach:{eyebrow:'Approach',h2:'Why MSL',sub:'Most consultants know either the technology or the regulation. We connect both and take ownership through to delivery.',pills:[
+      {n:'01',k:'co',h:'Regulatory depth',p:'Active projects spanning NIS2, ISO 27001, GDPR, GMP, DORA and the EU AI Act, across pharma, finance and the social sector. We know the standards from delivery, not from textbooks.'},
+      {n:'02',k:'ki',h:'Hands-on AI',p:'We build and run AI solutions ourselves, from Azure OpenAI to knowledge-graph, RAG and local architectures. So we assess AI risk from technical substance, not slides.'},
+      {n:'03',k:'dt',h:'Transformation through to go-live',p:'From risk analysis through architecture to go-live and audit. We steer complex multi-stakeholder projects and deliver, instead of only advising.'}
+    ]},
+    refs:{eyebrow:'References',h2:'Selected engagements',sub:'Anonymised by industry. Details and reference contacts available on request.',items:[
+      {pillars:['ki','co','dt'],branche:'Pharma & Medical Cannabis',title:'ISMS rollout (NIS2 / ISO 27001) & GMP production system',desc:'Building a full ISMS for a pharma group classified as an „important entity“, plus design of a GMP-compliant digital production documentation system (tablet, cleanroom, four-eyes principle). Plus processes and a framework for fully AI-driven specification, development, testing and deployment.'},
+      {pillars:['co','dt'],branche:'Financial sector',title:'OpSec governance & regulatory audit',desc:'Operational security governance for an investment bank preparing for a supervisory audit: operationalising the OpSec requirements and anchoring the processes in the written rules of organisation (Schriftlich fixierte Ordnung / SfO).'},
+      {pillars:['ki','co'],branche:'Social sector',title:'Data Protection Impact Assessments (GDPR / KDG)',desc:'Multiple DPIAs for a privacy-intensive social-sector organisation, for Microsoft 365, a specialist CRM and a fundraising platform, set up as a repeatable procedure. AI-assisted research, consolidation and generation of structured DPIA documents using locally operated AI systems, so that data protection is preserved during the drafting itself.'},
+      {pillars:['co','dt'],branche:'Pharmacy / Healthcare',title:'ERP migration to Dynamics 365 Business Central',desc:'Overall project lead for migrating a regulated pharmacy to Microsoft Dynamics 365 Business Central, integrating accounting, inventory, e-commerce and industry-specific interfaces.'}
+    ],note:'Further industry experience: banking, legal tech, manufacturing and public sector.'},
+    about:{eyebrow:'About',h2:'Owner-led, interdisciplinary, technically grounded',role:'Managing Director & Founder',lead:'Over 15 years at the intersection of AI, IT architecture, security and regulation.',p2:'Diplom in business mathematics (TU Berlin), most recently Principal IT Architect at a leading German IT consultancy. Engagements include: security governance for an investment bank, internal AI concept designer on Azure OpenAI, enterprise architecture and cloud transformation for corporations with thousands of seats.',p3:'Mathematics, architecture, security, regulation and AI rarely sit in one person. It is exactly this combination that makes MSL GmbH strong where disciplines meet: at the intersection of AI, compliance and digital transformation in regulated industries.',sisterStrong:'Joint venture.',sisterText:' mimagic builds the foundation layer for European AI knowledge systems. Today: Enchilada, a managed knowledge platform for AI agents. Research direction: world-models architecture and privacy-preserving memory. Open-core. EU-hosted. Made in Germany.'},
+    contact:{eyebrow:'Contact',h2:'Let’s talk.',p:'Whether it’s an AI initiative, an upcoming audit or digital transformation in a regulated context: a first conversation quickly shows whether it’s a fit.',addr:'MSL GmbH · Bernau bei Berlin · Germany'},
+    foot:{imprint:'Imprint',privacy:'Privacy'},
+    sl:{active:'active',completed:'completed'}
+  }
+};
+
+let lang=(localStorage.getItem('msl-lang')==='en')?'en':'de';
+let menuOpen=false;
+
+function navLinks(t,onclick){
+  const it=[['#leistungen',t.nav.services],['#ansatz',t.nav.approach],['#referenzen',t.nav.refs],['#ueber',t.nav.about]];
+  return it.map(function(x){return '<a href="'+x[0]+'" class="navlink" '+(onclick||'')+' style="'+ML+';color:#9aa6b6;text-decoration:none;font-size:.76rem;letter-spacing:.04em;padding:6px 0">'+x[1]+'</a>';}).join('');
+}
+function langBtns(){
+  function b(l){return '<button onclick="setLang(\''+l+'\')" style="border:0;background:transparent;cursor:pointer;padding:0;'+ML+';font-size:.76rem;letter-spacing:.04em;font-weight:'+(lang===l?'600':'400')+';color:'+(lang===l?'#e0bf55':'#5f7088')+'">'+l.toUpperCase()+'</button>';}
+  return '<span style="display:flex;align-items:center;gap:7px;font-size:.76rem">'+b('de')+'<span style="color:#3a4860">/</span>'+b('en')+'</span>';
+}
+function eyebrow(t){
+  return '<span style="color:#5f7088">// </span><span style="color:'+PILL.ki.txt+'">'+t.pillars.ki+'</span><span style="color:#5f7088"> · </span><span style="color:'+PILL.co.txt+'">'+t.pillars.co+'</span><span style="color:#5f7088"> · </span><span style="color:'+PILL.dt.txt+'">'+t.pillars.dt+'</span>';
+}
+function pillBar(keys,t){
+  return '<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.07)">'
+    +keys.map(function(k){return '<span style="display:inline-flex;align-items:center;gap:6px;font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;'+ML+';color:'+PILL[k].txt+'"><span style="width:7px;height:7px;border-radius:50%;background:'+PILL[k].dot+';display:block"></span>'+t.pshort[k]+'</span>';}).join('')+'</div>';
+}
+function pillDots(keys){
+  return '<span style="display:inline-flex;gap:5px">'+['ki','co','dt'].map(function(k){var on=keys.indexOf(k)>=0;return '<span style="width:8px;height:8px;border-radius:50%;display:block;background:'+(on?PILL[k].dot:'rgba(255,255,255,.13)')+';box-shadow:'+(on?'0 0 6px '+PILL[k].dot+'66':'none')+'"></span>';}).join('')+'</span>';
+}
+function scopeCol(label,pillarKey,items){
+  const dotColor=PILL[pillarKey].dot;const labelColor=PILL[pillarKey].txt;
+  const ind=['ki','co','dt'].map(function(k){var on=k===pillarKey;return '<span style="width:7px;height:7px;border-radius:50%;display:block;background:'+(on?PILL[k].dot:'rgba(255,255,255,.13)')+';box-shadow:'+(on?'0 0 6px '+PILL[k].dot+'66':'none')+'"></span>';}).join('');
+  const rows=items.map(function(f){return '<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.06)">'
+    +'<span style="width:6px;height:6px;border-radius:50%;background:'+dotColor+';display:block;flex:none"></span>'
+    +'<span style="color:#cdd6e2;font-size:.76rem;flex:1;'+ML+'">'+f+'</span></div>';}).join('');
+  return '<div><div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px"><span style="'+ML+';color:'+labelColor+';font-size:.6rem;letter-spacing:.12em;text-transform:uppercase">'+label+'</span><span style="display:inline-flex;gap:4px;flex:none">'+ind+'</span></div>'+rows+'</div>';
+}
+
+function render(){
+  const t=C[lang];
+  document.documentElement.lang=lang;
+
+  const services=t.services.items.map(function(it){
+    const done=it.status==='completed';const label=t.sl[it.status]||t.sl.active;
+    const col=done?'#5f7088':'#3fae6e';const glow=done?'none':'0 0 6px #3fae6e';
+    const tags=it.tags.map(function(tg){return '<span style="font-size:.68rem;color:#7fa6d8;background:rgba(63,118,189,.12);border:1px solid rgba(63,118,189,.25);border-radius:3px;padding:4px 8px;'+ML+'">#'+tg+'</span>';}).join('');
+    return '<div class="svc-card" style="position:relative;display:flex;flex-direction:column;height:100%;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:linear-gradient(180deg,#0e1d33,#0b1727);padding:28px">'
+      +'<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;'+ML+'">'
+      +'<span style="color:#C9A227;font-size:.82rem;letter-spacing:.08em">['+it.n+']</span>'
+      +'<span style="display:flex;align-items:center;gap:6px;color:#5f7088;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase"><span style="width:6px;height:6px;border-radius:50%;display:block;background:'+col+';box-shadow:'+glow+'"></span>'+label+'</span></div>'
+      +'<h3 style="font-weight:600;color:#eef3fb;font-size:1.2rem;line-height:1.25;margin:0 0 12px">'+it.title+'</h3>'
+      +'<p style="color:#9aa6b6;font-size:.97rem;line-height:1.62;margin:0">'+it.desc+'</p>'
+      +'<div style="margin-top:auto"><div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:7px">'+tags+'</div>'
+      +pillBar(it.pillars,t)+'</div></div>';
+  }).join('');
+
+  const pills=t.approach.pills.map(function(p){
+    return '<div class="pill" style="border:1px solid rgba(255,255,255,.1);border-radius:8px;background:linear-gradient(180deg,#0e1d33,#0b1727);padding:28px;border-top:2px solid '+PILL[p.k].dot+'">'
+      +'<div style="'+ML+';color:#5f7088;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px">MODULE '+p.n+'</div>'
+      +'<h3 style="font-weight:600;color:'+PILL[p.k].txt+';font-size:1.18rem;line-height:1.25;margin:0 0 12px">'+p.h+'</h3>'
+      +'<p style="color:#9aa6b6;font-size:.97rem;line-height:1.62;margin:0">'+p.p+'</p></div>';
+  }).join('');
+
+  const refs=t.refs.items.map(function(r){
+    return '<div class="ref-row" style="padding:clamp(22px,3vw,30px) clamp(22px,3vw,32px);border-bottom:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.01)">'
+      +'<div style="'+ML+'"><div style="display:flex;align-items:flex-start;gap:12px"><span style="width:8px;height:8px;border-radius:50%;background:#C9A227;display:block;margin-top:5px;flex:none;box-shadow:0 0 8px rgba(201,162,39,.6)"></span><span style="color:#7fa6d8;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase">'+r.branche+'</span></div><div style="margin:10px 0 0 20px">'+pillDots(r.pillars)+'</div></div>'
+      +'<div><h3 style="font-weight:600;color:#eef3fb;font-size:1.12rem;line-height:1.25;margin:0 0 8px">'+r.title+'</h3><p style="color:#9aa6b6;font-size:.96rem;line-height:1.6;margin:0">'+r.desc+'</p></div></div>';
+  }).join('');
+
+  const certs=C.certs.map(function(c){return '<span style="display:flex;gap:9px;align-items:flex-start;font-size:.72rem;color:#9aa6b6;'+ML+'"><span style="color:#3fae6e;flex:none">✓</span>'+c+'</span>';}).join('');
+
+  const mobile=menuOpen?'<div style="position:absolute;top:66px;left:0;right:0;background:#0A1422;border-bottom:1px solid rgba(255,255,255,.1);padding:8px 26px 18px;display:flex;flex-direction:column;'+ML+'">'+navLinks(t,'onclick="closeMenu()"')+'<div style="display:flex;align-items:center;justify-content:space-between;padding-top:14px">'+langBtns()+'<a href="#kontakt" onclick="closeMenu()" class="btn-gold" style="background:#C9A227;color:#0A1422;text-decoration:none;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:9px 16px;border-radius:4px;'+ML+'">'+t.nav.contact+'</a></div></div>':'';
+
+  document.getElementById('app').innerHTML=
+  '<div style="font-family:IBM Plex Sans,system-ui,sans-serif;color:#aeb9c9;background-color:#0A1422;background-image:linear-gradient(rgba(63,118,189,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(63,118,189,.05) 1px,transparent 1px);background-size:52px 52px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh">'
+
+  +'<header style="position:sticky;top:0;z-index:50;background:rgba(10,20,34,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)"><div style="max-width:1220px;margin:0 auto;padding:0 26px;height:66px;display:flex;align-items:center;justify-content:space-between;position:relative">'
+  +'<a href="#top" aria-label="MSL GmbH" style="display:flex;align-items:center;gap:14px;text-decoration:none">'+LOGO+'<span style="display:flex;align-items:center;gap:7px;'+ML+';font-size:.66rem;letter-spacing:.1em;color:#5f7088"><span style="width:7px;height:7px;border-radius:50%;background:#3fae6e;box-shadow:0 0 8px #3fae6e;display:block;animation:mslPulse 2.6s ease-in-out infinite"></span>SECURE</span></a>'
+  +'<div class="nav-desktop" style="display:flex;align-items:center;gap:22px">'+navLinks(t)+langBtns()+'<a href="#kontakt" class="btn-gold" style="'+ML+';background:#C9A227;color:#0A1422;text-decoration:none;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:9px 16px;border-radius:4px">'+t.nav.contact+'</a></div>'
+  +'<button class="nav-burger" onclick="toggleMenu()" aria-label="Menu" style="background:none;border:0;cursor:pointer;padding:8px;color:#eef3fb;align-items:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg></button>'
+  +'</div>'+mobile+'</header>'
+
+  +'<section id="top" style="position:relative;overflow:hidden;max-width:1220px;margin:0 auto;padding:clamp(48px,7vw,86px) 26px clamp(40px,5vw,60px)">'
+  +'<div style="position:absolute;top:-120px;left:30%;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(46,94,158,.22),transparent 68%);pointer-events:none"></div>'
+  +'<div class="hero-grid" style="position:relative;z-index:2"><div>'
+  +'<div style="'+ML+';font-size:.78rem;letter-spacing:.06em;margin-bottom:22px">'+eyebrow(t)+'</div>'
+  +'<h1 style="font-weight:600;color:#eef3fb;font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.1;letter-spacing:-.02em;margin:0 0 22px;text-wrap:balance">'+t.hero.pre+'<span style="color:#e0bf55">'+t.hero.accent+'</span>'+t.hero.post+'</h1>'
+  +'<p style="font-size:clamp(1.02rem,1.5vw,1.14rem);color:#9aa6b6;max-width:560px;line-height:1.62;margin:0 0 30px">'+t.hero.sub+'</p>'
+  +'<div style="display:flex;gap:14px;flex-wrap:wrap;'+ML+'"><a href="#kontakt" class="btn-gold" style="background:#C9A227;color:#0A1422;padding:13px 24px;border-radius:5px;font-weight:600;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none">'+t.hero.btnCall+'</a><a href="#leistungen" class="btn-ghost" style="border:1px solid rgba(255,255,255,.18);color:#cdd6e2;padding:13px 24px;border-radius:5px;font-weight:500;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none">'+t.hero.btnServices+'</a></div></div>'
+  +'<div style="border:1px solid rgba(255,255,255,.1);border-radius:10px;background:linear-gradient(180deg,#0e1d33,#0b1828);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4)">'
+  +'<div style="display:flex;align-items:center;gap:9px;padding:13px 18px;border-bottom:1px solid rgba(255,255,255,.08);'+ML+'"><span style="width:9px;height:9px;border-radius:50%;background:#3f76bd;display:block"></span><span style="width:9px;height:9px;border-radius:50%;background:#C9A227;display:block"></span><span style="width:9px;height:9px;border-radius:50%;background:#2bb8a3;display:block"></span><span style="margin-left:8px;color:#5f7088;font-size:.68rem;letter-spacing:.06em">'+t.hero.scopeTitle+'</span></div>'
+  +'<div style="padding:24px 24px 28px">'+GRAPH
+  +'<div class="scope-cols">'
+  +scopeCol(t.scope.ai,'ki',C.aiStack)
+  +scopeCol(t.scope.reg,'co',C.frameworks)
+  +scopeCol(t.scope.dt,'dt',C.transform[lang])
+  +'</div></div></div>'
+  +'</div></section>'
+
+  +'<section style="border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);background:rgba(46,94,158,.05)"><div style="max-width:1000px;margin:0 auto;padding:clamp(46px,6vw,72px) 26px">'
+  +'<div style="'+ML+';color:#5f7088;font-size:.66rem;letter-spacing:.12em;margin-bottom:16px">/* positioning */</div>'
+  +'<p style="font-size:clamp(1.3rem,2.8vw,2rem);color:#e6edf6;font-weight:500;line-height:1.4;margin:0;text-wrap:balance">'+t.band.pre+'<br><span style="color:#e0bf55">'+t.band.gold+'</span></p></div></section>'
+
+  +'<section id="leistungen" style="max-width:1220px;margin:0 auto;padding:clamp(56px,8vw,100px) 26px;scroll-margin-top:80px">'
+  +'<div style="margin-bottom:clamp(34px,5vw,52px)"><div style="'+ML+';color:#e0bf55;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px">[ '+t.services.eyebrow+' ]</div>'
+  +'<h2 style="font-weight:600;color:#eef3fb;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 14px;max-width:680px">'+t.services.h2+'</h2>'
+  +'<p style="color:#9aa6b6;font-size:1.06rem;line-height:1.6;margin:0;max-width:640px">'+t.services.sub+'</p></div>'
+  +'<div class="svc-grid">'+services+'</div></section>'
+
+  +'<section id="ansatz" style="max-width:1220px;margin:0 auto;padding:clamp(56px,8vw,100px) 26px;scroll-margin-top:80px">'
+  +'<div style="margin-bottom:clamp(34px,5vw,52px);max-width:680px"><div style="'+ML+';color:#e0bf55;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px">[ '+t.approach.eyebrow+' ]</div>'
+  +'<h2 style="font-weight:600;color:#eef3fb;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 14px">'+t.approach.h2+'</h2>'
+  +'<p style="color:#9aa6b6;font-size:1.06rem;line-height:1.6;margin:0">'+t.approach.sub+'</p></div>'
+  +'<div class="grid3">'+pills+'</div></section>'
+
+  +'<section id="referenzen" style="border-top:1px solid rgba(255,255,255,.08);background:rgba(8,16,28,.6);scroll-margin-top:80px"><div style="max-width:1220px;margin:0 auto;padding:clamp(56px,8vw,100px) 26px">'
+  +'<div style="margin-bottom:clamp(34px,5vw,52px);max-width:680px"><div style="'+ML+';color:#e0bf55;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px">[ '+t.refs.eyebrow+' ]</div>'
+  +'<h2 style="font-weight:600;color:#eef3fb;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 14px">'+t.refs.h2+'</h2>'
+  +'<p style="color:#9aa6b6;font-size:1.06rem;line-height:1.6;margin:0">'+t.refs.sub+'</p></div>'
+  +'<div style="border:1px solid rgba(255,255,255,.1);border-radius:8px;overflow:hidden">'+refs+'</div>'
+  +'<p style="'+ML+';font-size:.72rem;color:#5f7088;letter-spacing:.04em;margin-top:22px">'+t.refs.note+'</p></div></section>'
+
+  +'<section id="ueber" style="max-width:1220px;margin:0 auto;padding:clamp(56px,8vw,100px) 26px;scroll-margin-top:80px">'
+  +'<div style="'+ML+';color:#e0bf55;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px">[ '+t.about.eyebrow+' ]</div>'
+  +'<h2 style="font-weight:600;color:#eef3fb;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 clamp(32px,5vw,48px);max-width:720px">'+t.about.h2+'</h2>'
+  +'<div class="about-grid">'
+  +'<div style="border:1px solid rgba(255,255,255,.1);border-radius:8px;background:linear-gradient(180deg,#0e1d33,#0b1727);padding:30px;text-align:center">'
+  +'<div style="width:100%;aspect-ratio:1/1;margin:0 auto 20px;border:1px solid rgba(201,162,39,.4);border-radius:14px;overflow:hidden;background:#0b1727"><img src="assets/michael-ludwig.jpg" alt="Michael Ludwig" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
+  +'<h3 style="font-weight:600;color:#eef3fb;font-size:1.3rem;margin:0">Michael Ludwig</h3>'
+  +'<div style="'+ML+';color:#5f7088;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;margin-top:6px">'+t.about.role+'</div>'
+  +'<div style="margin-top:20px;display:flex;flex-direction:column;gap:8px;text-align:left">'+certs+'</div></div>'
+  +'<div><p style="font-weight:600;font-size:clamp(1.3rem,2.4vw,1.7rem);color:#eef3fb;line-height:1.35;margin:0 0 22px">'+t.about.lead+'</p>'
+  +'<p style="color:#9aa6b6;font-size:1.02rem;line-height:1.72;margin:0 0 18px">'+t.about.p2+'</p>'
+  +'<p style="color:#9aa6b6;font-size:1.02rem;line-height:1.72;margin:0 0 30px">'+t.about.p3+'</p>'
+  +'<div style="border:1px solid rgba(46,94,158,.4);border-radius:8px;padding:26px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap;background:rgba(46,94,158,.08)"><div style="flex:1;min-width:240px"><h3 style="'+ML+';color:#7fa6d8;font-size:1.05rem;font-weight:600;margin:0 0 8px;letter-spacing:.02em">mimagic GmbH</h3><p style="color:#9aa6b6;font-size:.96rem;line-height:1.6;margin:0"><strong style="color:#cdd6e2;font-weight:600">'+t.about.sisterStrong+'</strong>'+t.about.sisterText+'</p></div><a href="https://mimagic.ai" target="_blank" rel="noopener" class="mimagic-link" style="'+ML+';background:#2E5E9E;color:#fff;padding:11px 20px;border-radius:5px;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;text-decoration:none;white-space:nowrap">mimagic.ai →</a></div></div>'
+  +'</div></section>'
+
+  +'<section id="kontakt" style="position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);scroll-margin-top:80px"><div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(201,162,39,.08),transparent 70%);pointer-events:none"></div>'
+  +'<div style="position:relative;z-index:2;max-width:900px;margin:0 auto;padding:clamp(64px,9vw,118px) 26px;text-align:center">'
+  +'<div style="'+ML+';color:#e0bf55;font-size:.72rem;letter-spacing:.16em;margin-bottom:22px">&gt; '+t.contact.eyebrow+'</div>'
+  +'<h2 style="font-weight:600;color:#fff;font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.12;letter-spacing:-.02em;margin:0 0 18px">'+t.contact.h2+'</h2>'
+  +'<p style="color:#9aa6b6;font-size:1.08rem;max-width:560px;margin:0 auto 36px;line-height:1.6">'+t.contact.p+'</p>'
+  +'<a href="mailto:info@msl-labs.de" class="email-btn" style="'+ML+';display:inline-flex;align-items:center;gap:4px;color:#e0bf55;font-size:clamp(1.2rem,3vw,1.7rem);text-decoration:none;border:1px solid rgba(224,191,85,.35);border-radius:6px;padding:14px 26px;background:rgba(201,162,39,.05)">info@msl-labs.de<span style="display:inline-block;width:11px;height:1.05em;background:#e0bf55;margin-left:3px;animation:mslBlink 1.1s step-end infinite"></span></a>'
+  +'<p style="'+ML+';margin-top:26px;font-size:.74rem;letter-spacing:.06em;color:#5f7088">'+t.contact.addr+'</p></div></section>'
+
+  +'<footer style="background:#08101c;padding:30px 26px;border-top:1px solid rgba(255,255,255,.08)"><div style="max-width:1220px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;'+ML+'">'+LOGO_FOOT+'<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase"><a href="impressum.html" class="footlink" style="color:#7d8799;text-decoration:none">'+t.foot.imprint+'</a><span style="color:#2a3850">·</span><a href="datenschutz.html" class="footlink" style="color:#7d8799;text-decoration:none">'+t.foot.privacy+'</a><span style="color:#2a3850">·</span><span style="color:#5f7088">© '+new Date().getFullYear()+' MSL GmbH</span></div></div></footer>'
+
+  +'</div>';
+}
+function setLang(l){lang=l;menuOpen=false;try{localStorage.setItem('msl-lang',l)}catch(e){}render();}
+function toggleMenu(){menuOpen=!menuOpen;render();}
+function closeMenu(){menuOpen=false;render();}
+render();
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
