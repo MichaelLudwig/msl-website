@@ -35,7 +35,6 @@
   p{margin-bottom:8px;color:#9aa6b6}
   strong{color:#cdd6e2;font-weight:600}
   .mono{font-family:var(--ml);color:#cdd6e2}
-  .card{border:1px solid rgba(255,255,255,.1);border-radius:8px;background:linear-gradient(180deg,#0e1d33,#0b1727);padding:22px 26px;margin:14px 0}
   .back{display:inline-flex;align-items:center;gap:8px;margin-top:44px;font-family:var(--ml);font-size:.78rem;letter-spacing:.04em;color:#7fa6d8}
   hr{border:0;border-top:1px solid rgba(255,255,255,.08);margin:40px 0}
 </style>
@@ -90,4 +89,21 @@
   <p><span class="de">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</span><span class="en">We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.</span></p>
 
   <h2><span class="de">Haftung für Inhalte</span><span class="en">Liability for content</span></h2>
-  <p><spa
+  <p><span class="de">Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</span><span class="en">As a service provider, we are responsible for our own content on these pages in accordance with general law. However, we are not obliged to monitor transmitted or stored third-party information.</span></p>
+
+  <a href="index.html" class="back">&larr; <span class="de">Zurück zur Startseite</span><span class="en">Back to home</span></a>
+</main>
+<script>
+  function setLang(l){
+    document.body.setAttribute('data-lang',l);
+    document.documentElement.lang=l;
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){b.classList.toggle('active',b.dataset.set===l);});
+    try{localStorage.setItem('msl-lang',l);}catch(e){}
+  }
+  document.querySelectorAll('.lang-toggle button').forEach(function(b){
+    b.addEventListener('click',function(){setLang(b.dataset.set);});
+  });
+  try{var s=localStorage.getItem('msl-lang'); if(s==='en'){setLang('en');}}catch(e){}
+</script>
+</body>
+</html>
