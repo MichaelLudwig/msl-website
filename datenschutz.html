@@ -36,8 +36,6 @@
   strong{color:#cdd6e2;font-weight:600}
   .mono{font-family:var(--ml);color:#cdd6e2}
   .lead{color:#cdd6e2;font-size:1.05rem;margin-bottom:8px}
-  .note{border:1px solid rgba(63,118,189,.3);background:rgba(46,94,158,.08);border-radius:8px;padding:16px 18px;margin:14px 0;font-size:.92rem;color:#9aa6b6}
-  .note b{color:#7fa6d8;font-weight:600;font-family:var(--ml);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:6px}
   .back{display:inline-flex;align-items:center;gap:8px;margin-top:44px;font-family:var(--ml);font-size:.78rem;letter-spacing:.04em;color:#7fa6d8}
 </style>
 </head>
@@ -62,4 +60,30 @@
   <p><span class="de">Es werden keine Cookies gesetzt und kein Tracking eingesetzt.</span><span class="en">No cookies are set and no tracking is used.</span></p>
 
   <h2><span class="de">3. Kontaktaufnahme</span><span class="en">3. Contact</span></h2>
-  <p><span class="de">Bei Kontaktaufnahme per E-Mail verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung der Anfrage (Art. 6 Abs. 1 lit. b bzw. f DSGVO). Die Daten werden gelöscht, sobald sie nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</span><span class="en">If you contact us by e-mail, we process your details solely to handle the request (Art. 6(1)(b)/(f) GDPR). The
+  <p><span class="de">Bei Kontaktaufnahme per E-Mail verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung der Anfrage (Art. 6 Abs. 1 lit. b bzw. f DSGVO). Die Daten werden gelöscht, sobald sie nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</span><span class="en">If you contact us by e-mail, we process your details solely to handle the request (Art. 6(1)(b)/(f) GDPR). The data is deleted as soon as it is no longer required and no legal retention obligations apply.</span></p>
+
+  <h2><span class="de">4. Ihre Rechte</span><span class="en">4. Your rights</span></h2>
+  <p><span class="de">Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15 bis 21 DSGVO) sowie ein Beschwerderecht bei einer Aufsichtsbehörde.</span><span class="en">You have the right to access, rectification, erasure, restriction of processing, data portability and objection (Art. 15 to 21 GDPR), as well as the right to lodge a complaint with a supervisory authority.</span></p>
+
+  <h2><span class="de">5. Haftung für Inhalte</span><span class="en">5. Liability for content</span></h2>
+  <p><span class="de">Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</span><span class="en">As a service provider, we are responsible for our own content on these pages in accordance with general law. However, we are not obliged to monitor transmitted or stored third-party information.</span></p>
+
+  <h2><span class="de">6. Stand</span><span class="en">6. Last updated</span></h2>
+  <p class="mono"><span class="de">Juni 2026</span><span class="en">June 2026</span></p>
+
+  <a href="index.html" class="back">&larr; <span class="de">Zurück zur Startseite</span><span class="en">Back to home</span></a>
+</main>
+<script>
+  function setLang(l){
+    document.body.setAttribute('data-lang',l);
+    document.documentElement.lang=l;
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){b.classList.toggle('active',b.dataset.set===l);});
+    try{localStorage.setItem('msl-lang',l);}catch(e){}
+  }
+  document.querySelectorAll('.lang-toggle button').forEach(function(b){
+    b.addEventListener('click',function(){setLang(b.dataset.set);});
+  });
+  try{var s=localStorage.getItem('msl-lang'); if(s==='en'){setLang('en');}}catch(e){}
+</script>
+</body>
+</html>
