@@ -6,10 +6,14 @@
 <title>Datenschutzerklärung · MSL GmbH</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  @font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/ibm-plex-sans-400.woff2') format('woff2')}
+  @font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/ibm-plex-sans-500.woff2') format('woff2')}
+  @font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/ibm-plex-sans-600.woff2') format('woff2')}
+  @font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/ibm-plex-sans-700.woff2') format('woff2')}
+  @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/ibm-plex-mono-400.woff2') format('woff2')}
+  @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/ibm-plex-mono-500.woff2') format('woff2')}
+  @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/ibm-plex-mono-600.woff2') format('woff2')}
   :root{--ml:'IBM Plex Mono',monospace}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -38,6 +42,8 @@
   h1{color:#eef3fb;font-size:clamp(1.9rem,4vw,2.6rem);font-weight:600;letter-spacing:-.02em;margin-bottom:22px}
   h2{color:#eef3fb;font-size:1.08rem;font-weight:600;margin:32px 0 8px}
   p{margin-bottom:8px;color:#9aa6b6}
+  ul{margin:6px 0 10px 22px;color:#9aa6b6}
+  li{margin-bottom:5px}
   strong{color:#cdd6e2;font-weight:600}
   .mono{font-family:var(--ml);color:#cdd6e2}
   .lead{color:#cdd6e2;font-size:1.05rem;margin-bottom:8px}
@@ -69,17 +75,46 @@
   <p class="mono">MSL GmbH, Havelstraße 32, 16321 Bernau bei Berlin<br>E-Mail: <a href="mailto:info@msl-labs.de">info@msl-labs.de</a></p>
 
   <h2><span class="de">2. Hosting</span><span class="en">2. Hosting</span></h2>
-  <p><span class="de">Diese Website wird als statische Web-App (Azure Static Web Apps) bei Microsoft Azure gehostet. Beim Aufruf der Seite werden technisch notwendige Zugriffsdaten (u. a. IP-Adresse, Zeitpunkt, abgerufene Ressource) verarbeitet, um die Auslieferung der Seite und die IT-Sicherheit zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).</span><span class="en">This website is hosted as a static web app (Azure Static Web Apps) on Microsoft Azure. When the site is accessed, technically necessary access data (e.g. IP address, timestamp, requested resource) is processed to ensure delivery and IT security. The legal basis is Art. 6(1)(f) GDPR (legitimate interest).</span></p>
-  <p><span class="de">Es werden keine Cookies gesetzt und kein Tracking eingesetzt.</span><span class="en">No cookies are set and no tracking is used.</span></p>
+  <p><span class="de">Diese Website wird als statische Web-App (Azure Static Web Apps) bei Microsoft Azure gehostet. Beim Aufruf der Seite werden technisch notwendige Zugriffsdaten verarbeitet, um die Auslieferung der Seite und die IT-Sicherheit zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).</span><span class="en">This website is hosted as a static web app (Azure Static Web Apps) on Microsoft Azure. When the site is accessed, technically necessary access data is processed to ensure delivery and IT security. The legal basis is Art. 6(1)(f) GDPR (legitimate interest).</span></p>
 
-  <h2><span class="de">3. Kontaktaufnahme</span><span class="en">3. Contact</span></h2>
+  <h2><span class="de">3. Server-Logfiles</span><span class="en">3. Server log files</span></h2>
+  <p><span class="de">Der Hosting-Provider erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser automatisch übermittelt. Dies sind in der Regel:</span><span class="en">The hosting provider automatically collects and stores information in so-called server log files, which your browser transmits automatically. These are typically:</span></p>
+  <ul>
+    <li><span class="de">Browsertyp und Browserversion</span><span class="en">browser type and version</span></li>
+    <li><span class="de">verwendetes Betriebssystem</span><span class="en">operating system used</span></li>
+    <li><span class="de">Referrer-URL</span><span class="en">referrer URL</span></li>
+    <li><span class="de">Hostname des zugreifenden Geräts</span><span class="en">host name of the accessing device</span></li>
+    <li><span class="de">Uhrzeit der Serveranfrage</span><span class="en">time of the server request</span></li>
+    <li><span class="de">IP-Adresse</span><span class="en">IP address</span></li>
+  </ul>
+  <p><span class="de">Eine Zusammenführung dieser Daten mit anderen Datenquellen findet nicht statt. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO; das berechtigte Interesse liegt im sicheren und stabilen Betrieb der Website. Die Logfiles werden nur für einen begrenzten Zeitraum gespeichert und anschließend gelöscht.</span><span class="en">This data is not merged with other data sources. Processing is based on Art. 6(1)(f) GDPR; the legitimate interest lies in the secure and stable operation of the website. Log files are stored only for a limited period and then deleted.</span></p>
+
+  <h2><span class="de">4. Kontaktaufnahme</span><span class="en">4. Contact</span></h2>
   <p><span class="de">Bei Kontaktaufnahme per E-Mail verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung der Anfrage (Art. 6 Abs. 1 lit. b bzw. f DSGVO). Die Daten werden gelöscht, sobald sie nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</span><span class="en">If you contact us by e-mail, we process your details solely to handle the request (Art. 6(1)(b)/(f) GDPR). The data is deleted as soon as it is no longer required and no legal retention obligations apply.</span></p>
 
-  <h2><span class="de">4. Ihre Rechte</span><span class="en">4. Your rights</span></h2>
-  <p><span class="de">Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15 bis 21 DSGVO) sowie ein Beschwerderecht bei einer Aufsichtsbehörde.</span><span class="en">You have the right to access, rectification, erasure, restriction of processing, data portability and objection (Art. 15 to 21 GDPR), as well as the right to lodge a complaint with a supervisory authority.</span></p>
+  <h2><span class="de">5. Keine Cookies, kein Tracking</span><span class="en">5. No cookies, no tracking</span></h2>
+  <p><span class="de">Diese Website setzt keine Cookies und verwendet keine Analyse- oder Tracking-Tools (z. B. Google Analytics, Matomo o. Ä.). Es findet keine Erstellung von Nutzerprofilen statt.</span><span class="en">This website does not set cookies and does not use any analytics or tracking tools (e.g. Google Analytics, Matomo or similar). No user profiles are created.</span></p>
 
-  <h2><span class="de">5. Stand</span><span class="en">5. Last updated</span></h2>
-  <p class="mono"><span class="de">Juni 2026</span><span class="en">June 2026</span></p>
+  <h2><span class="de">6. Schriftarten</span><span class="en">6. Fonts</span></h2>
+  <p><span class="de">Diese Website verwendet ausschließlich lokal eingebundene Schriftarten (IBM Plex). Es werden keine Schriften von externen Servern (z. B. Google Fonts) geladen; beim Seitenaufruf wird daher keine Verbindung zu Servern Dritter hergestellt und es werden keine Daten an Dritte übermittelt.</span><span class="en">This website uses locally embedded fonts (IBM Plex) only. No fonts are loaded from external servers (e.g. Google Fonts); when the page is accessed, no connection to third-party servers is established and no data is transmitted to third parties.</span></p>
+
+  <h2><span class="de">7. Ihre Rechte als betroffene Person</span><span class="en">7. Your rights as a data subject</span></h2>
+  <p><span class="de">Sie haben hinsichtlich der Sie betreffenden personenbezogenen Daten folgende Rechte:</span><span class="en">With regard to your personal data, you have the following rights:</span></p>
+  <ul>
+    <li><span class="de">Recht auf Auskunft (Art. 15 DSGVO)</span><span class="en">right of access (Art. 15 GDPR)</span></li>
+    <li><span class="de">Recht auf Berichtigung (Art. 16 DSGVO)</span><span class="en">right to rectification (Art. 16 GDPR)</span></li>
+    <li><span class="de">Recht auf Löschung (Art. 17 DSGVO)</span><span class="en">right to erasure (Art. 17 GDPR)</span></li>
+    <li><span class="de">Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</span><span class="en">right to restriction of processing (Art. 18 GDPR)</span></li>
+    <li><span class="de">Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</span><span class="en">right to data portability (Art. 20 GDPR)</span></li>
+    <li><span class="de">Recht auf Widerspruch (Art. 21 DSGVO)</span><span class="en">right to object (Art. 21 GDPR)</span></li>
+  </ul>
+  <p><span class="de">Zur Ausübung Ihrer Rechte genügt eine E-Mail an <a href="mailto:info@msl-labs.de">info@msl-labs.de</a>. Darüber hinaus haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die für uns zuständige Behörde ist die Landesbeauftragte für den Datenschutz und für das Recht auf Akteneinsicht Brandenburg, Stahnsdorfer Damm 77, 14532 Kleinmachnow (<a href="https://www.lda.brandenburg.de" target="_blank" rel="noopener">lda.brandenburg.de</a>).</span><span class="en">To exercise your rights, an e-mail to <a href="mailto:info@msl-labs.de">info@msl-labs.de</a> is sufficient. You also have the right to lodge a complaint with a data protection supervisory authority. The authority responsible for us is the Landesbeauftragte für den Datenschutz und für das Recht auf Akteneinsicht Brandenburg, Stahnsdorfer Damm 77, 14532 Kleinmachnow (<a href="https://www.lda.brandenburg.de" target="_blank" rel="noopener">lda.brandenburg.de</a>).</span></p>
+
+  <h2><span class="de">8. Datensicherheit</span><span class="en">8. Data security</span></h2>
+  <p><span class="de">Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers „https://" anzeigt.</span><span class="en">For security reasons and to protect the transmission of confidential content, this website uses SSL/TLS encryption. You can recognise an encrypted connection by the „https://" in your browser's address bar.</span></p>
+
+  <h2><span class="de">9. Stand und Änderungen</span><span class="en">9. Status and changes</span></h2>
+  <p><span class="de">Stand: Juni 2026. Durch die Weiterentwicklung der Website oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen.</span><span class="en">Last updated: June 2026. As the website develops or due to changed legal requirements, it may become necessary to amend this privacy policy.</span></p>
 
   <a href="index.html" class="back">&larr; <span class="de">Zurück zur Startseite</span><span class="en">Back to home</span></a>
 </main>
