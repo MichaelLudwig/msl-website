@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   html{scroll-behavior:smooth}
-  body{margin:0;background:#0A1422}
+  body{margin:0;background:#0A1422;overflow-x:clip}
   *{box-sizing:border-box}
   @keyframes mslPulse{0%,100%{opacity:.35}50%{opacity:1}}
   @keyframes mslBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
@@ -149,7 +149,7 @@ const C={
     ],note:'Further industry experience: banking, legal tech, manufacturing and public sector.'},
     about:{eyebrow:'About',h2:'Owner-led, interdisciplinary, technically grounded',role:'Managing Director & Founder',lead:'Over 15 years at the intersection of AI, IT architecture, security and regulation.',p2:'Diplom in business mathematics (TU Berlin), most recently Principal IT Architect at a leading German IT consultancy. Engagements include: security governance for an investment bank, internal AI concept designer on Azure OpenAI, enterprise architecture and cloud transformation for corporations with thousands of seats.',p3:'Mathematics, architecture, security, regulation and AI rarely sit in one person. It is exactly this combination that makes MSL GmbH strong where disciplines meet: at the intersection of AI, compliance and digital transformation in regulated industries.',sisterStrong:'Joint venture.',sisterText:' mimagic builds the foundation layer for European AI knowledge systems. Today: Enchilada, a managed knowledge platform for AI agents. Research direction: world-models architecture and privacy-preserving memory. Open-core. EU-hosted. Made in Germany.'},
     contact:{eyebrow:'Contact',h2:'Let’s talk.',p:'Whether it’s an AI initiative, an upcoming audit or digital transformation in a regulated context: a first conversation quickly shows whether it’s a fit.',addr:'MSL GmbH · Bernau bei Berlin · Germany'},
-    foot:{imprint:'Imprint',privacy:'Privacy'},
+    foot:{imprint:'Site notice',privacy:'Privacy'},
     sl:{active:'active',completed:'completed'}
   }
 };
@@ -220,7 +220,7 @@ function render(){
   const mobile=menuOpen?'<div style="position:absolute;top:66px;left:0;right:0;background:#0A1422;border-bottom:1px solid rgba(255,255,255,.1);padding:8px 26px 18px;display:flex;flex-direction:column;'+ML+'">'+navLinks(t,'onclick="closeMenu()"')+'<div style="display:flex;align-items:center;justify-content:space-between;padding-top:14px">'+langBtns()+'<a href="#kontakt" onclick="closeMenu()" class="btn-gold" style="background:#C9A227;color:#0A1422;text-decoration:none;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:9px 16px;border-radius:4px;'+ML+'">'+t.nav.contact+'</a></div></div>':'';
 
   document.getElementById('app').innerHTML=
-  '<div style="font-family:IBM Plex Sans,system-ui,sans-serif;color:#aeb9c9;background-color:#0A1422;background-image:linear-gradient(rgba(63,118,189,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(63,118,189,.05) 1px,transparent 1px);background-size:52px 52px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh">'
+  '<div style="font-family:IBM Plex Sans,system-ui,sans-serif;color:#aeb9c9;background-color:#0A1422;background-image:linear-gradient(rgba(63,118,189,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(63,118,189,.05) 1px,transparent 1px);background-size:52px 52px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh">'
 
   +'<header style="position:sticky;top:0;z-index:50;background:rgba(10,20,34,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)"><div style="max-width:1220px;margin:0 auto;padding:0 26px;height:66px;display:flex;align-items:center;justify-content:space-between;position:relative">'
   +'<a href="#top" aria-label="MSL GmbH" style="display:flex;align-items:center;gap:14px;text-decoration:none">'+LOGO+'<span style="display:flex;align-items:center;gap:7px;'+ML+';font-size:.66rem;letter-spacing:.1em;color:#5f7088"><span style="width:7px;height:7px;border-radius:50%;background:#3fae6e;box-shadow:0 0 8px #3fae6e;display:block;animation:mslPulse 2.6s ease-in-out infinite"></span>SECURE</span></a>'

@@ -28,6 +28,11 @@
   .lang-toggle button{border:0;background:transparent;cursor:pointer;padding:0;font-family:var(--ml);font-size:.76rem;letter-spacing:.04em;color:#5f7088}
   .lang-toggle button.active{color:#e0bf55;font-weight:600}
   .lang-toggle .sep{color:#3a4860}
+  .nav-right{display:flex;align-items:center;gap:22px}
+  .nav-links{display:flex;align-items:center;gap:20px;font-family:var(--ml)}
+  .nav-links a{color:#9aa6b6;font-size:.76rem;letter-spacing:.04em}
+  .nav-links a:hover{color:#e0bf55;text-decoration:none}
+  @media(max-width:720px){.nav-links{display:none}}
   main{max-width:880px;margin:0 auto;padding:clamp(40px,6vw,72px) 26px 90px}
   .eyebrow{font-family:var(--ml);color:#e0bf55;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
   h1{color:#eef3fb;font-size:clamp(1.9rem,4vw,2.6rem);font-weight:600;letter-spacing:-.02em;margin-bottom:22px}
@@ -43,7 +48,15 @@
 <header>
   <nav class="nav">
     <a href="index.html" class="brand" aria-label="MSL GmbH"><svg width="118" height="32" viewBox="0 0 132 36" role="img" aria-label="MSL GmbH"><rect x="0" y="4" width="6" height="28" rx="1" fill="#C9A227"></rect><text x="17" y="26" font-family="IBM Plex Mono,monospace" font-weight="600" font-size="24" letter-spacing="-0.5" fill="#eef3fb">MSL</text><text x="18" y="33" font-family="IBM Plex Mono,monospace" font-weight="500" font-size="6.5" letter-spacing="3.5" fill="#5f7088">GMBH</text></svg></a>
-    <div class="lang-toggle"><button data-set="de" class="active">DE</button><span class="sep">/</span><button data-set="en">EN</button></div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html#leistungen"><span class="de">Leistungen</span><span class="en">Services</span></a>
+        <a href="index.html#ansatz"><span class="de">Ansatz</span><span class="en">Approach</span></a>
+        <a href="index.html#referenzen"><span class="de">Referenzen</span><span class="en">References</span></a>
+        <a href="index.html#ueber"><span class="de">Über uns</span><span class="en">About</span></a>
+      </div>
+      <div class="lang-toggle"><button data-set="de" class="active">DE</button><span class="sep">/</span><button data-set="en">EN</button></div>
+    </div>
   </nav>
 </header>
 <main>
